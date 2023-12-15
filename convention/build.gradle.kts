@@ -78,8 +78,8 @@ gradlePlugin {
         }
         register("androidLibraryCompose") {
             id="com.l3gacy.android.library.compose"
-            displayName = "Android Library Jacoco Convention"
-            description = "Android Library Jacoco Convention"
+            displayName = "Android Library Compose Convention"
+            description = "Android Library Compose Convention"
             tags.set(listOf("android compose library convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidLibraryComposeConventionPlugin"
         }
