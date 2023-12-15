@@ -1,4 +1,4 @@
-一个Android开发的公约插件，定义了工程约束插件，用于保持源码
+一个Android开发的公约插件，定义了工程约束插件，用于保持配置统一
 
 主要代码来自于[nowinandroid](https://github.com/android/nowinandroid/blob/main/build-logic){:target="_blank"}，修改了部分局限的约束
 
