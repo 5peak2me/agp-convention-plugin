@@ -1,0 +1,140 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+# pip install mkdocs mkdocs-material
+# mkdocs serve
+# mkdocs gh-deploy
+
+site_name: agp-convention-plugin
+site_url: https://5peak2me.github.io/agp-convention-plugin/
+repo_name: agp-convention-plugin
+repo_url: https://github.com/5peak2me/agp-convention-plugin
+site_description: "A Compose-driven architecture for Android apps"
+site_author: J!nl!n
+remote_branch: gh-pages
+
+copyright: 'Copyright &copy; 2023 J!nl!n™ Inc. All rights reserved.'
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/5peak2me
+  version:
+    provider: mike
+
+#  alternate:
+#    - name: English
+#      link: /en/
+#      lang: en
+#    - name: 简体中文
+#      link: /zh/
+#      lang: zh
+
+theme:
+  name: 'material'
+  favicon: assets/images/gradle.svg
+  logo: assets/images/gradle.svg
+  language: en
+  palette:
+#    # Palette toggle for automatic mode
+#    - media: "(prefers-color-scheme)"
+#      toggle:
+#        icon: material/brightness-auto
+#        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: '(prefers-color-scheme: light)'
+      scheme: default
+      primary: 'light blue'
+      accent: 'green'
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: '(prefers-color-scheme: dark)'
+      scheme: slate
+      primary: 'black'
+      accent: 'yellow'
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: 'Lato'
+    code: 'Fira Code'
+#  features:
+#    - navigation.tabs
+
+#extra_css:
+#  - 'assets/css/app.css'
+
+markdown_extensions:
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - attr_list
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.emoji
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - admonition
+
+plugins:
+  - search
+#  - minify:
+#      minify_html: true
+#  - redirects:
+#      redirect_maps:
+#        # Redirect all feature pages to features/*
+#        'l3gacy.android.application.compose.md': features/l3gacy.android.application.firebase.md
+#        'l3gacy.android.application.firebase.md': features/l3gacy.android.application.firebase.md
+#        'l3gacy.android.application.flavors.md': features/l3gacy.android.application.flavors.md
+#        'l3gacy.android.application.jacoco.md': features/l3gacy.android.application.jacoco.md
+#        'l3gacy.android.application.md': features/l3gacy.android.application.md
+#        'l3gacy.android.hilt.md': features/l3gacy.android.hilt.md
+#        'l3gacy.android.library.compose.md': features/l3gacy.android.library.compose.md
+#        'l3gacy.android.library.jacoco.md': features/l3gacy.android.library.jacoco.md
+#        'l3gacy.android.library.md': features/l3gacy.android.library.md
+#        'l3gacy.android.room.md': features/l3gacy.android.room.md
+#        'l3gacy.android.test.md': features/l3gacy.android.test.md
+#        'l3gacy.jvm.library.md': features/l3gacy.jvm.library.md
+#        # Redirect all changelog pages to changelog/*
+#        'changelog.md': 'changelogs/changelog.md'
+#        'changelog_1x.md': 'changelogs/changelog_1x.md'
+#        # Redirect all contributing pages to contribute/*
+#        'contributing.md': 'contribute/contributing.md'
+#        'code_of_conduct.md': 'contribute/code_of_conduct.md'
+
+nav:
+  - 'Introduction': index.md
+  - 'Features':
+    - 'l3gacy.android.application.compose': features/l3gacy.android.application.compose.md
+    - 'l3gacy.android.application.firebase': features/l3gacy.android.application.firebase.md
+#    - 'l3gacy.android.application.flavors': features/l3gacy.android.application.flavors.md
+    - 'l3gacy.android.application.jacoco': features/l3gacy.android.application.jacoco.md
+    - 'l3gacy.android.application': features/l3gacy.android.application.md
+    - 'l3gacy.android.hilt': features/l3gacy.android.hilt.md
+    - 'l3gacy.android.library.compose': features/l3gacy.android.library.compose.md
+    - 'l3gacy.android.library.jacoco': features/l3gacy.android.library.jacoco.md
+    - 'l3gacy.android.library': features/l3gacy.android.library.md
+    - 'l3gacy.android.room': features/l3gacy.android.room.md
+    - 'l3gacy.android.test': features/l3gacy.android.test.md
+    - 'l3gacy.jvm.library': features/l3gacy.jvm.library.md
+  - 'Change Logs':
+      - 'Change Log': changelogs/changelog.md
+      - '1.x Change Log': changelogs/changelog_1x.md
+  - 'Contributing':
+      - 'Contributing': contribute/contributing.md
+      - 'Code of Conduct': contribute/code_of_conduct.md

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base", "group:all", ":dependencyDashboard", "schedule:daily"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["org.objenesis:objenesis"],
+      "allowedVersions": "<=2.6"
+    }
+  ]
+}

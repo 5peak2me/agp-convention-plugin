@@ -1,0 +1,25 @@
+changelog:
+  exclude:
+    labels:
+      - ignore-in-changelog
+    authors:
+      - dependabot
+      - gradle-update-robot
+  categories:
+    - title: New Features and enhanchements 🎉
+      labels:
+        - PR type > new-feature
+        - PR type > enhanchement
+    - title: Bugfixes 🛠
+      labels:
+        - Pr type > bug
+    - title: Documentation 📝
+      labels:
+        - PR type > documentation
+    - title: Tehchnical 🤖
+      labels:
+        - PR type > automation
+        - PR type > refactoring
+    - title: Other Changes
+      labels:
+        - "*"
