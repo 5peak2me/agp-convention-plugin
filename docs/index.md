@@ -2,8 +2,6 @@
 
 主要代码来自于[nowinandroid](https://github.com/android/nowinandroid/blob/main/build-logic){:target="_blank"}，修改了部分局限的约束
 
-- https://plugins.gradle.org/docs/publish-plugin
-- https://github.com/47degrees/hood/issues/47
 # agp-convention-plugin
 
 The `build-logic` folder defines project-specific convention plugins, used to keep a single

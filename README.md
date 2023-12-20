@@ -4,7 +4,7 @@
 
 # agp-convention-plugin
 
-The `build-logic` folder defines project-specific convention plugins, used to keep a single
+The [`build-logic`](https://github.com/android/nowinandroid/tree/main/build-logic) folder defines project-specific convention plugins, used to keep a single
 source of truth for common module configurations.
 
 This approach is heavily based on
@@ -16,7 +16,7 @@ By setting up convention plugins in `build-logic`, we can avoid duplicated build
 messy `subproject` configurations, without the pitfalls of the `buildSrc` directory.
 
 `build-logic` is an included build, as configured in the root
-[`settings.gradle.kts`](../settings.gradle.kts).
+[`settings.gradle.kts`](https://github.com/android/nowinandroid/tree/main/build-logic).
 
 Inside `build-logic` is a `convention` module, which defines a set of plugins that all normal
 modules can use to configure themselves.
@@ -33,10 +33,10 @@ setup.
 
 Current list of convention plugins:
 
-- [`nowinandroid.android.application`](convention/src/main/kotlin/AndroidApplicationConventionPlugin.kt),
-  [`nowinandroid.android.library`](convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt),
-  [`nowinandroid.android.test`](convention/src/main/kotlin/AndroidTestConventionPlugin.kt):
+- [`nowinandroid.android.application`](https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/AndroidApplicationConventionPlugin.kt),
+  [`nowinandroid.android.library`](https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/AndroidLibraryConventionPlugin.kt),
+  [`nowinandroid.android.test`](https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/AndroidTestConventionPlugin.kt):
   Configures common Android and Kotlin options.
-- [`nowinandroid.android.application.compose`](convention/src/main/kotlin/AndroidApplicationComposeConventionPlugin.kt),
-  [`nowinandroid.android.library.compose`](convention/src/main/kotlin/AndroidLibraryComposeConventionPlugin.kt):
+- [`nowinandroid.android.application.compose`](https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/AndroidApplicationComposeConventionPlugin.kt),
+  [`nowinandroid.android.library.compose`](https://github.com/android/nowinandroid/blob/main/build-logic/convention/src/main/kotlin/AndroidLibraryComposeConventionPlugin.kt):
   Configures Jetpack Compose options
