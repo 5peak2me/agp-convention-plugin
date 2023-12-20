@@ -24,7 +24,7 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
-group = "com.l3gacy.plugin.gradle"
+group = "com.5peak2me.plugin.gradle"
 version = "0.0.1"
 
 // Configure the gradle-convention plugins to target JDK 17
@@ -56,77 +56,77 @@ gradlePlugin {
 
     plugins {
         register("androidApplicationCompose") {
-            id = "com.l3gacy.android.application.compose"
+            id = "com.5peak2me.android.application.compose"
             displayName = "Android Application Compose Convention"
             description = "Android Application Compose Convention with common module configurations."
             tags.set(listOf("android compose application convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidApplicationComposeConventionPlugin"
         }
         register("androidApplication") {
-            id = "com.l3gacy.android.application"
+            id = "com.5peak2me.android.application"
             displayName = "Android Application Convention"
             description = "Android Application Convention with common module configurations."
             tags.set(listOf("android application convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidApplicationConventionPlugin"
         }
         register("androidApplicationJacoco") {
-            id = "com.l3gacy.android.application.jacoco"
+            id = "com.5peak2me.android.application.jacoco"
             displayName = "Android Application Jacoco Convention"
             description = "Android Application Jacoco Convention with common module configurations."
             tags.set(listOf("jacoco convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidApplicationJacocoConventionPlugin"
         }
         register("androidLibraryCompose") {
-            id="com.l3gacy.android.library.compose"
+            id="com.5peak2me.android.library.compose"
             displayName = "Android Library Compose Convention"
             description = "Android Library Compose Convention with common module configurations."
             tags.set(listOf("android compose library convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
-            id = "com.l3gacy.android.library"
+            id = "com.5peak2me.android.library"
             displayName = "Android Library Convention"
             description = "Android Library Convention with common module configurations."
             tags.set(listOf("android library convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidLibraryConventionPlugin"
         }
         register("androidLibraryJacoco") {
-            id = "com.l3gacy.android.library.jacoco"
+            id = "com.5peak2me.android.library.jacoco"
             displayName = "Android Library Jacoco Convention"
             description = "Android Library Jacoco Convention with common module configurations."
             tags.set(listOf("jacoco convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidLibraryJacocoConventionPlugin"
         }
         register("androidTest") {
-            id = "com.l3gacy.android.test"
+            id = "com.5peak2me.android.test"
             displayName = "Android Test Convention"
             description = "Android Test Convention with common module configurations."
             tags.set(listOf("test convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidTestConventionPlugin"
         }
         register("androidHilt") {
-            id = "com.l3gacy.android.hilt"
+            id = "com.5peak2me.android.hilt"
             displayName = "Android Hilt Convention"
             description = "Android Hilt Convention with common module configurations."
             tags.set(listOf("hilt convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidHiltConventionPlugin"
         }
         register("androidRoom") {
-            id = "com.l3gacy.android.room"
+            id = "com.5peak2me.android.room"
             displayName = "Android Room Convention"
             description = "Android Room Convention with common module configurations."
             tags.set(listOf("room convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidRoomConventionPlugin"
         }
         register("androidFirebase") {
-            id = "com.l3gacy.android.application.firebase"
+            id = "com.5peak2me.android.application.firebase"
             displayName = "Android Application Firebase Convention"
             description = "Android Application Firebase Convention with common module configurations."
             tags.set(listOf("firebase convention"))
             implementationClass = "com.l3gacy.plugin.gradle.convention.AndroidApplicationFirebaseConventionPlugin"
         }
         register("jvmLibrary") {
-            id = "com.l3gacy.jvm.library"
+            id = "com.5peak2me.jvm.library"
             displayName = "Jvm Library Convention"
             description = "Jvm Library Convention with common module configurations."
             tags.set(listOf("jvm convention"))
