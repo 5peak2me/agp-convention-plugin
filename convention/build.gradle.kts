@@ -13,8 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-@file:Suppress("DSL_SCOPE_VIOLATION")
-
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -24,7 +22,7 @@ plugins {
     alias(libs.plugins.detekt)
 }
 
-group = "com.5peak2me.plugin.gradle"
+group = "com.github.5peak2me.plugin.gradle"
 version = "0.0.1"
 
 // Configure the gradle-convention plugins to target JDK 17
