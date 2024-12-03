@@ -19,7 +19,7 @@ package com.l3gacy.plugin.gradle.convention.internal
  * This is shared between :app and :benchmarks module to provide configurations type safety.
  */
 @Suppress("unused")
-enum class BuildType(val applicationIdSuffix: String? = null) {
+internal enum class BuildType(val applicationIdSuffix: String? = null) {
     DEBUG(".debug"),
     RELEASE,
     BENCHMARK(".benchmark"),

@@ -22,7 +22,7 @@ import org.gradle.api.artifacts.VersionConstraint
 import org.gradle.kotlin.dsl.getByType
 import java.util.Locale
 
-val Project.libs
+internal val Project.libs
     get(): VersionCatalog = extensions.getByType<VersionCatalogsExtension>().named("libs")
 
 private const val TARGET_SDK = "targetSdk"
@@ -60,12 +60,12 @@ private fun Project.findVersion(name: String): VersionConstraint {
 
 internal typealias AndroidExtension = com.android.build.api.dsl.CommonExtension<*, *, *, *, *>
 
-fun String.camelToSnakeCase(): String {
+internal fun String.camelToSnakeCase(): String {
     val pattern = "(?<=.)[A-Z]".toRegex()
     return this.replace(pattern, "_$0").lowercase()
 }
 
-fun String.camelToSnakeCaseNoRegex(): String {
+internal fun String.camelToSnakeCaseNoRegex(): String {
     return this.fold(StringBuilder()) { acc, c ->
         acc.let {
             val lowerC = c.lowercase()
@@ -74,12 +74,12 @@ fun String.camelToSnakeCaseNoRegex(): String {
     }.toString()
 }
 
-fun String.snakeToCamelCase(): String {
+internal fun String.snakeToCamelCase(): String {
     val pattern = "_[a-z]".toRegex()
     return replace(pattern) { it.value.last().uppercase() }
 }
 
-fun String.snakeToCamelCase2(): String {
+internal fun String.snakeToCamelCase2(): String {
     val pattern = "_([a-z])".toRegex()
     return replace(pattern) { it.groupValues[1].uppercase() }
 }

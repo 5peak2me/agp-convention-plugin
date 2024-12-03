@@ -17,7 +17,6 @@
 
 package com.l3gacy.plugin.gradle.convention.internal
 
-import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.ManagedVirtualDevice
 import org.gradle.kotlin.dsl.get
 import org.gradle.kotlin.dsl.invoke

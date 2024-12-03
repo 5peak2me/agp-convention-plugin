@@ -21,11 +21,10 @@ package com.l3gacy.plugin.gradle.convention.internal
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor
-import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.ProductFlavor
 
 @Suppress("EnumEntryName")
-enum class FlavorDimension {
+internal enum class FlavorDimension {
     contentType,
 }
 
@@ -33,12 +32,12 @@ enum class FlavorDimension {
 // purposes, or from a production backend server which supplies up-to-date, real content.
 // These two product flavors reflect this behaviour.
 @Suppress("EnumEntryName")
-enum class Flavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
+internal enum class Flavor(val dimension: FlavorDimension, val applicationIdSuffix: String? = null) {
     demo(FlavorDimension.contentType, applicationIdSuffix = ".demo"),
     prod(FlavorDimension.contentType),
 }
 
-fun configureFlavors(
+internal fun configureFlavors(
     commonExtension: AndroidExtension,
     flavorConfigurationBlock: ProductFlavor.(flavor: Flavor) -> Unit = {},
 ) {
