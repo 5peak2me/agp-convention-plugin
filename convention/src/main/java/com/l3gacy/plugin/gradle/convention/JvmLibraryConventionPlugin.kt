@@ -19,7 +19,8 @@ import com.l3gacy.plugin.gradle.convention.internal.configureKotlinJvm
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class JvmLibraryConventionPlugin : Plugin<Project> {
+@Suppress("unused")
+internal class JvmLibraryConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
