@@ -1,0 +1,23 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analysis:
+    uses: ./.github/workflows/analysis.yml
+
+  test:
+    needs: [ analysis ]
+    uses: ./.github/workflows/build.yml

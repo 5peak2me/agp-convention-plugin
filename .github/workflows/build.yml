@@ -1,68 +1,58 @@
 name: Build
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-  workflow_dispatch:
+  workflow_call:
 
 concurrency:
   group: build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  # analysis:
-  #   uses: 5peak2me/agp-convention-plugin/.github/workflows/analysis.yml@main
-
-  # test:
-  #   needs: [ analysis ]
-  #   uses: 5peak2me/agp-convention-plugin/.github/workflows/test.yml@main
-
   build:
-    # needs: [ analysis, test ]
     runs-on: macos-latest
     timeout-minutes: 60
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Validate Gradle Wrapper 🔧
+      - name: Validate Gradle Wrapper 🐘
         uses: gradle/actions/wrapper-validation@v3
 
-      - name: Setup Java 🔧
+      - name: Setup JDK 🔧
         uses: actions/setup-java@v4
         with:
-          distribution: 'zulu'
+          distribution: 'temurin'
           java-version: '17'
-#          cache: gradle
+      #          cache: gradle
 
-#      - name: Setup Gradle
-#        uses: gradle/gradle-build-action@v2
-#        with:
-#          dependency-graph: generate-and-submit
+      #      - name: Setup Gradle
+      #        uses: gradle/gradle-build-action@v2
+      #        with:
+      #          dependency-graph: generate-and-submit
 
-#      - name: Cache Gradle packages
-#        uses: actions/cache@v3
-#        with:
-#          path: |
-#            ~/.gradle/caches
-#            ~/.gradle/wrapper
-#          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
-#          restore-keys: |
-#            ${{ runner.os }}-gradle-
+      #      - name: Cache Gradle packages
+      #        uses: actions/cache@v3
+      #        with:
+      #          path: |
+      #            ~/.gradle/caches
+      #            ~/.gradle/wrapper
+      #          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+      #          restore-keys: |
+      #            ${{ runner.os }}-gradle-
 
-#      - name: Run Spotless Task
-#        uses: gradle/gradle-build-action@v2.4.2
-#        with:
-#          arguments: spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache
+      #      - name: Run Spotless Task
+      #        uses: gradle/gradle-build-action@v2.4.2
+      #        with:
+      #          arguments: spotlessCheck --init-script gradle/init.gradle.kts --no-configuration-cache
 
-      - name: Run Build Task
-        uses: gradle/gradle-build-action@v2.4.2
+      - name: Setup Gradle 🐘
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Run Gradle Task
+        runs: ./gradlew :convention:build -s --scan
         with:
           cache-read-only: true
           gradle-home-cache-cleanup: true
-          arguments: :convention:build -s --scan
 
 #      - name: Upload build reports
 #        uses: actions/upload-artifact@v3
