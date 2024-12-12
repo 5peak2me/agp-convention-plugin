@@ -1,7 +1,7 @@
 name: Documentation
 
 on:
-  push:
+  release:
     branches:
       - master
       - main
